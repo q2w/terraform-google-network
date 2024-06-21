@@ -82,6 +82,12 @@ spec:
     type: list(map(string))
     default: []
     required: false
+    connections:
+    - source:
+        source: https://github.com/terraform-google-modules/terraform-google-network//modules/vpc
+        version: v9.1.0
+      spec:
+        output_expr: { "network": network_name }
   outputs:
   - name: connector_ids
     description: VPC serverless connector ID.
